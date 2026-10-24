@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduTech - Online Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="#home" class="logo"><i class="fa-solid fa-graduation-cap"></i> EduTech</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle light and dark theme"><i class="fa-solid fa-moon"></i></button>
+            <button class="icon-btn menu-toggle" id="mobileMenu" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Learn the skills behind tomorrow's tech</h1>
+            <p>Free video courses in programming, networking, cybersecurity, AI and design, taught by working engineers.</p>
+            <a href="#courses" class="btn-primary">Browse courses</a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+        <h2 class="section-title">Featured courses</h2>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="searchInput" placeholder="Search by title, skill or instructor..." autocomplete="off" />
+        </div>
+
+        <div class="filter-container" id="filters">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="programming">Programming</button>
+            <button class="filter-btn" data-category="networking">Networking</button>
+            <button class="filter-btn" data-category="security">Cybersecurity</button>
+            <button class="filter-btn" data-category="ai">AI</button>
+            <button class="filter-btn" data-category="design">Design</button>
+        </div>
+
+        <div class="courses-grid" id="coursesGrid"></div>
+        <p class="empty" id="emptyMsg" hidden>No courses match your search. Try a different word or category.</p>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2 class="section-title">Why EduTech</h2>
+        <p>Every course is a hands-on video series you can watch at your own pace, on any device, at no cost.</p>
+    </section>
+
+    <div class="modal" id="courseModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal" aria-label="Close">&times;</button>
+            <div class="video-wrap"><iframe id="modalVideo" title="Course video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc"></p>
+            <a id="modalLink" class="btn-primary" href="#" target="_blank" rel="noopener noreferrer">Open on YouTube</a>
+        </div>
+    </div>
+
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get in touch</h2>
+        <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your name" required />
+            <input type="email" placeholder="Your email" required />
+            <textarea rows="5" placeholder="Your message" required></textarea>
+            <button type="submit" class="btn-primary">Send message</button>
+        </form>
+    </section>
+
+    <footer><p>&copy; 2026 EduTech Learning Platform. All rights reserved.</p></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
